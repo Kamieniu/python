@@ -75,7 +75,7 @@ class HangmanGame:
 
     def choseRandomWord(self):
 
-        randomWord = self.words[self.randomNumber]
+        randomWord = self.filteredWords[self.randomNumber]
 
         self.chosenValueMatchTable = [''] * len(randomWord.word)
 
@@ -114,8 +114,10 @@ class HangmanGame:
 
             else:
                 print('It\'s not a letter, dummy!')
+
                 self.displayPrompt()
-        print(f'Great, you won!')
+
+        print(f'Great, you won! The word is: {self.randomWord.word}')
 
 
 hangmanGame = HangmanGame()
